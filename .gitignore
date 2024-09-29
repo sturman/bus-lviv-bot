@@ -13,3 +13,4 @@ cdk.out
 .env
 
 !.releaserc.js
+!eslint.config.js

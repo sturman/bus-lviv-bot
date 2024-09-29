@@ -10,6 +10,7 @@
     "test": "jest",
     "prettier:check:ci": "prettier --check .",
     "prettier:format": "prettier --write .",
+    "eslint": "eslint .",
     "cdk": "cdk",
     "cdk:synth": "cdk synth",
     "cdk:diff": "cdk diff",
