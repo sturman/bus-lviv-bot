@@ -19,7 +19,7 @@ bot.on(message('location'), location);
 bot.hears(/(^\d+$)|(^\/\d+$)/, lad);
 
 bot.catch((err, ctx: Context) => {
-  logger.error(`Ooops, encountered an error for ${ctx.updateType}, ${ctx.message}`, { err });
+  logger.error(`Ooops, encountered an error for ${ctx.updateType}, ${JSON.stringify(ctx.message)}`, { err });
 });
 
 // bot.on(message('text'), ctx => ctx.reply(`Hello, ${ctx.message.from.first_name}.\nYou've just sent ${ctx.message.text}`));
