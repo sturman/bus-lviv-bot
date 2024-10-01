@@ -7,7 +7,7 @@ on:
 
 permissions:
   id-token: write
-  contents: read
+  contents: write # to be able to publish a GitHub release
 
 jobs:
   release:
@@ -30,4 +30,6 @@ jobs:
       - name: Deploy prod
         run: npm run cdk:deploy
       - name: Publish release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm run semantic-release
