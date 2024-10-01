@@ -6,6 +6,8 @@ import { location } from './middleware/location';
 import { message } from 'telegraf/filters';
 import { lad } from './middleware/lad';
 import { token } from './config/config';
+import { APIGatewayProxyEventV2 } from 'aws-lambda';
+import { Update } from '@telegraf/types/update';
 
 export const logger = new Logger({ serviceName: 'bus-lviv-bot' });
 
@@ -22,12 +24,18 @@ bot.catch((err, ctx: Context) => {
 
 // bot.on(message('text'), ctx => ctx.reply(`Hello, ${ctx.message.from.first_name}.\nYou've just sent ${ctx.message.text}`));
 
-export const handler = async (event: any) => {
-  const body = JSON.parse(event.body);
-  logger.info(body);
-  await bot.handleUpdate(body);
+export const handler = async (event: APIGatewayProxyEventV2) => {
+  try {
+    const body = JSON.parse(event.body!) as Update;
+    logger.info('body -->', { body });
+    await bot.handleUpdate(body);
+  } catch (error: unknown) {
+    logger.error('error -->', { error });
+  }
+  // respond to Telegram that the webhook has been received.
+  // if this is not sent, telegram will try to resend the webhook over and over again.
   return {
     statusCode: 200,
-    body: '',
+    body: JSON.stringify({ message: 'function executed successfully' }),
   };
 };
