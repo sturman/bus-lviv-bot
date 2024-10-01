@@ -24,7 +24,7 @@ const getMessageMarkdown = (stop: Stop) => {
   const timetable = stop.timetable;
   let routes = '';
   timetable?.forEach(route => {
-    routes += `${convertVehicleTypeToEmoji(route.vehicle_type)} ${route.route} - ${route.time_left} - \u{1F68F} ${route.end_stop_name}\n`;
+    routes += `${convertVehicleTypeToEmoji(route.vehicle_type)} ${route.route} - ${route.time_left} - \u{1F68F} ${route.end_stop}\n`;
   });
   return fmt`
 ${bold(stop.code)}
