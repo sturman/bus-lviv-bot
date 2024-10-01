@@ -1,3 +1,9 @@
+## [1.0.2](https://github.com/sturman/bus-lviv-bot/compare/v1.0.1...v1.0.2) (2024-10-01)
+
+### Bug Fixes
+
+* fix end stop in reply message ([b3ce067](https://github.com/sturman/bus-lviv-bot/commit/b3ce067e2e3ffaa757d1a635f045e03322b7eb92))
+
 ## [1.0.1](https://github.com/sturman/bus-lviv-bot/compare/v1.0.0...v1.0.1) (2024-10-01)
 
 ### Bug Fixes
