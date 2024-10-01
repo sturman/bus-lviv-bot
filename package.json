@@ -15,7 +15,7 @@
     "cdk": "cdk",
     "cdk:synth": "cdk synth",
     "cdk:diff": "cdk diff",
-    "cdk:deploy": "cdk deploy",
+    "cdk:deploy": "cdk deploy --all --require-approval never",
     "semantic-release": "semantic-release"
   },
   "devDependencies": {
