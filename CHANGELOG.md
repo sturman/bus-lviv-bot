@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/sturman/bus-lviv-bot/compare/v1.0.0...v1.0.1) (2024-10-01)
+
+### Bug Fixes
+
+* do not use environment name ([4aa6451](https://github.com/sturman/bus-lviv-bot/commit/4aa64513853a801d4c2d166a30a570b377c17fa3))
+* output Lambda URL to SSM parameter ([7c615fd](https://github.com/sturman/bus-lviv-bot/commit/7c615fd6e241718fe9af156b1d81abf4a9b278ba))
+
 ## 1.0.0 (2024-10-01)
 
 ### Features
