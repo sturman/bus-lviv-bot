@@ -8,6 +8,7 @@
     "build": "tsc",
     "watch": "tsc -w",
     "test": "jest",
+    "ts-check": "tsc --noEmit",
     "prettier:check:ci": "prettier --check .",
     "prettier:format": "prettier --write .",
     "eslint": "eslint .",
