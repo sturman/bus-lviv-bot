@@ -1,3 +1,9 @@
+## [1.1.0](https://github.com/sturman/bus-lviv-bot/compare/v1.0.2...v1.1.0) (2024-10-15)
+
+### Features
+
+* show logs and users on a CloudWatch dashboard ([6b23d6e](https://github.com/sturman/bus-lviv-bot/commit/6b23d6e7578e6b807641c1b87fe567c2e00e49e2))
+
 ## [1.0.2](https://github.com/sturman/bus-lviv-bot/compare/v1.0.1...v1.0.2) (2024-10-01)
 
 ### Bug Fixes
