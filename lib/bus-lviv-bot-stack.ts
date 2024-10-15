@@ -5,6 +5,7 @@ import * as lambda from 'aws-cdk-lib/aws-lambda';
 import { FunctionUrlAuthType } from 'aws-cdk-lib/aws-lambda';
 import * as path from 'node:path';
 import { StringParameter } from 'aws-cdk-lib/aws-ssm';
+import { Dashboard, LogQueryVisualizationType, LogQueryWidget } from 'aws-cdk-lib/aws-cloudwatch';
 
 export class BusLvivBotStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
@@ -39,5 +40,31 @@ export class BusLvivBotStack extends cdk.Stack {
       parameterName: 'bus-lviv-bot-function-url',
       stringValue: lambdaUrl.url,
     });
+
+    const dashboard = new Dashboard(this, 'bus-lviv-bot-cw-dashboard', {
+      dashboardName: 'bus-lviv-bot',
+    });
+    const logQueryWidget = new LogQueryWidget({
+      logGroupNames: [nodeJsFunction.logGroup.logGroupName],
+      view: LogQueryVisualizationType.TABLE,
+      width: 24,
+      height: 18,
+      queryLines: [
+        'fields ' +
+          '@timestamp, level, body.message.chat.first_name as first_name, body.message.chat.last_name as last_name, ' +
+          'body.message.chat.username as username, ' +
+          'body.message.text as text, body.message.location.latitude as latitude, body.message.location.longitude as longitude',
+        'filter @message like /update_id/',
+      ],
+    });
+    dashboard.addWidgets(logQueryWidget);
+    const uniqueUsersWidget = new LogQueryWidget({
+      logGroupNames: [nodeJsFunction.logGroup.logGroupName],
+      view: LogQueryVisualizationType.TABLE,
+      width: 4,
+      height: 4,
+      queryLines: ['stats count_distinct(body.message.from.id) as unique_users'],
+    });
+    dashboard.addWidgets(uniqueUsersWidget);
   }
 }
