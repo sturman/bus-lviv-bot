@@ -1,3 +1,9 @@
+## [1.1.2](https://github.com/sturman/bus-lviv-bot/compare/v1.1.1...v1.1.2) (2024-12-12)
+
+### Bug Fixes
+
+* update eslint dependencies ([5a0031f](https://github.com/sturman/bus-lviv-bot/commit/5a0031f10896973993b5ac59099f2bd0904ab5b3))
+
 ## [1.1.1](https://github.com/sturman/bus-lviv-bot/compare/v1.1.0...v1.1.1) (2024-12-12)
 
 ### Bug Fixes
