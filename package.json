@@ -23,7 +23,7 @@
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@types/jest": "^29.5.14",
-    "@types/node": "22.15.21",
+    "@types/node": "22.15.30",
     "aws-cdk": "2.1018.0",
     "conventional-changelog-conventionalcommits": "^9.0.0",
     "esbuild": "^0.25.5",
