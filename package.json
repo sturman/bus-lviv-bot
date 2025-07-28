@@ -24,7 +24,7 @@
     "@semantic-release/git": "^10.0.1",
     "@types/jest": "^29.5.14",
     "@types/node": "24.0.15",
-    "aws-cdk": "2.1021.0",
+    "aws-cdk": "2.1022.0",
     "conventional-changelog-conventionalcommits": "^9.1.0",
     "esbuild": "^0.25.8",
     "eslint": "^9.31.0",
