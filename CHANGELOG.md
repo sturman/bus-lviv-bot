@@ -1,3 +1,9 @@
+## [1.1.3](https://github.com/sturman/bus-lviv-bot/compare/v1.1.2...v1.1.3) (2025-08-25)
+
+### Bug Fixes
+
+* update AWS CDK feature flags ([51731d3](https://github.com/sturman/bus-lviv-bot/commit/51731d32c672a6ff910584565df087d49019637b))
+
 ## [1.1.2](https://github.com/sturman/bus-lviv-bot/compare/v1.1.1...v1.1.2) (2024-12-12)
 
 ### Bug Fixes
