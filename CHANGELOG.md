@@ -1,3 +1,9 @@
+## [1.1.4](https://github.com/sturman/bus-lviv-bot/compare/v1.1.3...v1.1.4) (2025-08-27)
+
+### Bug Fixes
+
+* remove import workspaces from jest.config ([d999822](https://github.com/sturman/bus-lviv-bot/commit/d999822a602c1aac540ff57eeac074315dc23e1f))
+
 ## [1.1.3](https://github.com/sturman/bus-lviv-bot/compare/v1.1.2...v1.1.3) (2025-08-25)
 
 ### Bug Fixes
