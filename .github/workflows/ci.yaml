@@ -28,7 +28,7 @@ jobs:
     environment: prod
     permissions:
       id-token: write
-      contents: read
+      contents: write
       pull-requests: write
     steps:
       - name: Checkout
