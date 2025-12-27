@@ -1,3 +1,9 @@
+## [1.2.0](https://github.com/sturman/bus-lviv-bot/compare/v1.1.4...v1.2.0) (2025-12-27)
+
+### Features
+
+* **lambda:** update runtime from Node.js 22.x to 24.x ([c910219](https://github.com/sturman/bus-lviv-bot/commit/c91021915f308c6cca2008481d5d0fc34106b1fb))
+
 ## [1.1.4](https://github.com/sturman/bus-lviv-bot/compare/v1.1.3...v1.1.4) (2025-08-27)
 
 ### Bug Fixes
