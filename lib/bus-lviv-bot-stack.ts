@@ -17,7 +17,7 @@ export class BusLvivBotStack extends cdk.Stack {
 
     const nodeJsFunctionProps: NodejsFunctionProps = {
       functionName: `bus-lviv-bot`,
-      runtime: lambda.Runtime.NODEJS_22_X,
+      runtime: lambda.Runtime.NODEJS_24_X,
       handler: 'index.handler',
       entry: path.join(__dirname, `/../functions/bus-lviv-bot/index.ts`),
       environment: {
