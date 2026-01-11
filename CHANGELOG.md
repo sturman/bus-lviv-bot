@@ -1,3 +1,9 @@
+## [1.2.1](https://github.com/sturman/bus-lviv-bot/compare/v1.2.0...v1.2.1) (2026-01-11)
+
+### Bug Fixes
+
+* improve error handling ([f283295](https://github.com/sturman/bus-lviv-bot/commit/f2832954fa9f30fc897e81dbdaaf0cfbcc134a26))
+
 ## [1.2.0](https://github.com/sturman/bus-lviv-bot/compare/v1.1.4...v1.2.0) (2025-12-27)
 
 ### Features
