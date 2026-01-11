@@ -8,15 +8,26 @@ import { Message } from '@telegraf/types/message';
 export const lad = async (ctx: Context) => {
   const message = ctx.message as Message.TextMessage;
   const stopId: number = parseInt(message.text.replace('/', ''));
-  const stop: Stop = await fetchStop(stopId);
-  const markdown = getMessageMarkdown(stop);
-  await ctx.reply(markdown, {
-    reply_parameters: { message_id: message.message_id },
-  });
+  if (isNaN(stopId) || stopId <= 0) {
+    await ctx.reply('Будь ласка, введіть коректний номер зупинки (позитивне число).');
+    return;
+  }
+  try {
+    const stop: Stop = await fetchStop(stopId);
+    const markdown = getMessageMarkdown(stop);
+    await ctx.reply(markdown, {
+      reply_parameters: { message_id: message.message_id },
+    });
+  } catch (error) {
+    console.error('Error fetching stop:', error);
+    await ctx.reply('Вибачте, сталася помилка при отриманні інформації про зупинку. Спробуйте пізніше.');
+  }
 };
 
 const fetchStop = async (stopId: number) => {
-  const response = await axios.get(`${apiUrl}/stops/${stopId}`);
+  const response = await axios.get(`${apiUrl}/stops/${stopId}`, {
+    timeout: 5000,
+  });
   return response.data as Stop;
 };
 

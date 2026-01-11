@@ -1,2 +1,8 @@
-export const apiUrl: string = process.env.API_URL!;
-export const token: string = process.env.BOT_TOKEN!;
+const getEnvVar = (name: string): string => {
+  const value = process.env[name];
+  if (!value) throw new Error(`${name} environment variable is required`);
+  return value;
+};
+
+export const apiUrl = getEnvVar('API_URL');
+export const token = getEnvVar('BOT_TOKEN');
