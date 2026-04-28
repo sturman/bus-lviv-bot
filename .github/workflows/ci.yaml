@@ -47,7 +47,7 @@ jobs:
       - name: Synth
         run: npm run cdk:synth
       - name: Diff
-        uses: corymhall/cdk-diff-action@f6a58358690c94f79d5f9fa485a93a4cb5f67541 # v2.0.8
+        uses: corymhall/cdk-diff-action@ad67041313333f7f2bd26b33f18fb134610a971e # v2.0.9
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
           failOnDestructiveChanges: false
