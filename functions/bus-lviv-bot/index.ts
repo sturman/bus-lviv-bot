@@ -1,4 +1,3 @@
-import { Logger } from '@aws-lambda-powertools/logger';
 import { Context, Telegraf } from 'telegraf';
 import { start } from './middleware/start';
 import { help } from './middleware/help';
@@ -8,8 +7,7 @@ import { lad } from './middleware/lad';
 import { token } from './config/config';
 import { APIGatewayProxyEventV2 } from 'aws-lambda';
 import { Update } from '@telegraf/types/update';
-
-export const logger = new Logger({ serviceName: 'bus-lviv-bot' });
+import { logger } from './logger';
 
 const bot = new Telegraf(token);
 
