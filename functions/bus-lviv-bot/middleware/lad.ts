@@ -1,10 +1,9 @@
 import axios from 'axios';
 import { Stop } from '../types/stop';
-import { bold, code, fmt } from 'telegraf/format';
 import { apiUrl } from '../config/config';
 import { Context } from 'telegraf';
 import { Message } from '@telegraf/types/message';
-import { convertVehicleTypeToEmoji } from '../format/vehicle-emoji';
+import { buildStopMessage } from '../format/stop-message';
 
 export const lad = async (ctx: Context) => {
   const message = ctx.message as Message.TextMessage;
@@ -15,8 +14,7 @@ export const lad = async (ctx: Context) => {
   }
   try {
     const stop: Stop = await fetchStop(stopId);
-    const markdown = getMessageMarkdown(stop);
-    await ctx.reply(markdown, {
+    await ctx.reply(buildStopMessage(stop), {
       reply_parameters: { message_id: message.message_id },
     });
   } catch (error) {
@@ -30,19 +28,4 @@ const fetchStop = async (stopId: number) => {
     timeout: 5000,
   });
   return response.data as Stop;
-};
-
-const getMessageMarkdown = (stop: Stop) => {
-  const timetable = stop.timetable;
-  let routes = '';
-  timetable?.forEach(route => {
-    routes += `${convertVehicleTypeToEmoji(route.vehicle_type)} ${route.route} - ${route.time_left} - \u{1F68F} ${route.end_stop}\n`;
-  });
-  return fmt`
-${bold(stop.code)}
-${code(stop.name)}
-------------------------------
-${routes}
-/${stop.code}
-`;
 };

@@ -7,12 +7,12 @@ export interface Timetable {
   arrival_time: string;
   time_left: string;
   vehicle_id: string;
-  location: string[];
+  location: [number, number];
   bearing: number;
   color: string;
   vehicle_type: Vehicle;
   shape_id: string;
-  direction: number;
+  direction: number | null;
   direction_id: number;
   end_stop: string;
   end_stop_name: string;
