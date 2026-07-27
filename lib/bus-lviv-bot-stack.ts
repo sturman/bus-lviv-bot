@@ -2,7 +2,7 @@ import * as cdk from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 import { NodejsFunction, NodejsFunctionProps } from 'aws-cdk-lib/aws-lambda-nodejs';
 import * as lambda from 'aws-cdk-lib/aws-lambda';
-import { FunctionUrlAuthType } from 'aws-cdk-lib/aws-lambda';
+import { Architecture, FunctionUrlAuthType } from 'aws-cdk-lib/aws-lambda';
 import * as path from 'node:path';
 import { StringParameter } from 'aws-cdk-lib/aws-ssm';
 import { Dashboard, LogQueryVisualizationType, LogQueryWidget } from 'aws-cdk-lib/aws-cloudwatch';
@@ -18,6 +18,7 @@ export class BusLvivBotStack extends cdk.Stack {
     const nodeJsFunctionProps: NodejsFunctionProps = {
       functionName: `bus-lviv-bot`,
       runtime: lambda.Runtime.NODEJS_24_X,
+      architecture: Architecture.ARM_64,
       handler: 'index.handler',
       entry: path.join(__dirname, `/../functions/bus-lviv-bot/index.ts`),
       environment: {
