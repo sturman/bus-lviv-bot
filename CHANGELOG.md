@@ -1,12 +1,32 @@
 ## [1.4.1](https://github.com/sturman/bus-lviv-bot/compare/v1.4.0...v1.4.1) (2026-07-27)
 
+### Bug Fixes
+
+* **lad:** tell the user when a stop number does not exist ([ffc6f73](https://github.com/sturman/bus-lviv-bot/commit/ffc6f735407fac020dcbdca7a6e3ddf080fb352b))
+
 ## [1.4.0](https://github.com/sturman/bus-lviv-bot/compare/v1.3.1...v1.4.0) (2026-07-27)
+
+### Features
+
+* **lad:** rework stop message and fix response types ([3fe2a6e](https://github.com/sturman/bus-lviv-bot/commit/3fe2a6e247767426bbfa109cd30652d0348c732e))
 
 ## [1.3.1](https://github.com/sturman/bus-lviv-bot/compare/v1.3.0...v1.3.1) (2026-07-27)
 
+### Bug Fixes
+
+* **lad:** render trolleybus emoji for live vehicle_type ([3c1284c](https://github.com/sturman/bus-lviv-bot/commit/3c1284ca425007f0448bc95d4d9e0f151b3755a3))
+
 ## [1.3.0](https://github.com/sturman/bus-lviv-bot/compare/v1.2.2...v1.3.0) (2026-07-27)
 
+### Features
+
+* **lambda:** set function architecture to ARM_64 ([d092735](https://github.com/sturman/bus-lviv-bot/commit/d09273519a4878c4e37d35313d3946e62806298a))
+
 ## [1.2.2](https://github.com/sturman/bus-lviv-bot/compare/v1.2.1...v1.2.2) (2026-07-14)
+
+### Bug Fixes
+
+* resolve npm audit vulnerabilities ([9203979](https://github.com/sturman/bus-lviv-bot/commit/9203979e241414ee5f756c456cffb3c45aa516d8))
 
 ## [1.2.1](https://github.com/sturman/bus-lviv-bot/compare/v1.2.0...v1.2.1) (2026-01-11)
 
