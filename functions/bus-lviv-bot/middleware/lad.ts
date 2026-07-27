@@ -4,6 +4,7 @@ import { bold, code, fmt } from 'telegraf/format';
 import { apiUrl } from '../config/config';
 import { Context } from 'telegraf';
 import { Message } from '@telegraf/types/message';
+import { convertVehicleTypeToEmoji } from '../format/vehicle-emoji';
 
 export const lad = async (ctx: Context) => {
   const message = ctx.message as Message.TextMessage;
@@ -44,18 +45,4 @@ ${code(stop.name)}
 ${routes}
 /${stop.code}
 `;
-};
-
-const convertVehicleTypeToEmoji = (vehicleType: string) => {
-  switch (vehicleType) {
-    case 'bus':
-    case 'marshrutka':
-      return '\u{1F68C}';
-    case 'tram':
-      return '\u{1F68B}';
-    case 'trol':
-      return '\u{1F68E}';
-    default:
-      return '';
-  }
 };
