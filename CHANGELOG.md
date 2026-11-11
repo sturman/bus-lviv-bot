@@ -1,3 +1,9 @@
+## [1.4.2](https://github.com/sturman/bus-lviv-bot/compare/v1.4.1...v1.4.2) (2026-11-11)
+
+### Bug Fixes
+
+* raise Lambda timeout above the API timeout and clean up audit findings ([eed9be3](https://github.com/sturman/bus-lviv-bot/commit/eed9be3e2d52d126eaf4665d704ba6c30f647918))
+
 ## [1.4.1](https://github.com/sturman/bus-lviv-bot/compare/v1.4.0...v1.4.1) (2026-07-27)
 
 ### Bug Fixes
