@@ -3,6 +3,7 @@ import { apiUrl } from '../config/config';
 import { Stop } from '../types/stop';
 import { Context } from 'telegraf';
 import { Message } from '@telegraf/types/message';
+import { logger } from '../logger';
 
 export const location = async (ctx: Context) => {
   const locationMessage = ctx.message as Message.LocationMessage;
@@ -16,7 +17,7 @@ export const location = async (ctx: Context) => {
     });
     await ctx.reply(message);
   } catch (error) {
-    console.error('Error fetching closest stops:', error);
+    logger.error('Error fetching closest stops', { lat, lon, error });
     await ctx.reply('Вибачте, сталася помилка при пошуку найближчих зупинок. Спробуйте пізніше.');
   }
 };

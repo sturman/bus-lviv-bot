@@ -20,6 +20,8 @@ export class BusLvivBotStack extends cdk.Stack {
       runtime: lambda.Runtime.NODEJS_24_X,
       architecture: Architecture.ARM_64,
       handler: 'index.handler',
+      // Default is 3s, shorter than the 5s axios timeout used by the handlers.
+      timeout: cdk.Duration.seconds(15),
       entry: path.join(__dirname, `/../functions/bus-lviv-bot/index.ts`),
       environment: {
         BOT_TOKEN: botToken,

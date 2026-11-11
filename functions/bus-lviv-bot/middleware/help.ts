@@ -10,7 +10,6 @@ export const help = (ctx: Context) => {
     { source: image },
     {
       caption: helpText,
-      parse_mode: 'Markdown',
     },
   );
 };
