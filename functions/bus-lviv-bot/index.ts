@@ -14,13 +14,11 @@ const bot = new Telegraf(token);
 bot.start(start);
 bot.help(help);
 bot.on(message('location'), location);
-bot.hears(/(^\d+$)|(^\/\d+$)/, lad);
+bot.hears(/^\/?\d+$/, lad);
 
 bot.catch((err, ctx: Context) => {
   logger.error(`Ooops, encountered an error for ${ctx.updateType}, ${JSON.stringify(ctx.message)}`, { err });
 });
-
-// bot.on(message('text'), ctx => ctx.reply(`Hello, ${ctx.message.from.first_name}.\nYou've just sent ${ctx.message.text}`));
 
 export const handler = async (event: APIGatewayProxyEventV2) => {
   try {

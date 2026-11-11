@@ -4,6 +4,8 @@
 
 `BOT_TOKEN` - Telegram bot token
 
+`API_URL` - base URL of the Lviv public transport API
+
 ### Serverless
 * add token to AWS Parameters Store `aws ssm put-parameter --name "bus-lviv-bot-token" --type "String" --value "<TOKEN>"`
 * add API URL to AWS Parameters Store `aws ssm put-parameter --name "bus-lviv-bot-api-url" --type "String" --value "<API_URL>"`

@@ -7,7 +7,7 @@ const config: Config = {
   },
   moduleFileExtensions: ['ts', 'js', 'json'],
   testRegex: '.*\\.spec\\.ts$',
-  collectCoverageFrom: ['**/src/**/*.ts'],
+  collectCoverageFrom: ['functions/**/*.ts', 'lib/**/*.ts'],
   passWithNoTests: true,
   coveragePathIgnorePatterns: ['jest.config.ts', '.spec.ts$'],
   coverageDirectory: 'coverage',

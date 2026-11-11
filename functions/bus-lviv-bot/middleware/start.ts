@@ -12,7 +12,6 @@ export const start = async (ctx: Context) => {
     { source: image },
     {
       caption: startText,
-      parse_mode: 'Markdown',
       ...keyboard,
     },
   );

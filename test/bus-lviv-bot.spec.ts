@@ -15,6 +15,12 @@ describe('BusLvivBotStack', () => {
     template.hasResource('AWS::Lambda::Function', {});
   });
 
+  // The handlers call the API with a 5s axios timeout; the Lambda must outlive it so the user
+  // gets the error reply and Telegram does not redeliver the update.
+  it('Lambda timeout is longer than the upstream API timeout', () => {
+    template.hasResourceProperties('AWS::Lambda::Function', { Timeout: 15 });
+  });
+
   it('Lambda Function URL created', () => {
     template.hasResource('AWS::Lambda::Url', {});
   });
