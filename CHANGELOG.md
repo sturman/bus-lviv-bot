@@ -1,3 +1,9 @@
+## [1.5.0](https://github.com/sturman/bus-lviv-bot/compare/v1.4.2...v1.5.0) (2026-11-24)
+
+### Features
+
+* **lambda:** run the bot on the Node.js 26 runtime ([b2c8ab3](https://github.com/sturman/bus-lviv-bot/commit/b2c8ab3e2d8f6da675e4c0d9fc08b53faa1d52c8))
+
 ## [1.4.2](https://github.com/sturman/bus-lviv-bot/compare/v1.4.1...v1.4.2) (2026-11-11)
 
 ### Bug Fixes
