@@ -17,7 +17,7 @@ export class BusLvivBotStack extends cdk.Stack {
 
     const nodeJsFunctionProps: NodejsFunctionProps = {
       functionName: `bus-lviv-bot`,
-      runtime: lambda.Runtime.NODEJS_24_X,
+      runtime: lambda.Runtime.NODEJS_26_X,
       architecture: Architecture.ARM_64,
       handler: 'index.handler',
       // Default is 3s, shorter than the 5s axios timeout used by the handlers.
